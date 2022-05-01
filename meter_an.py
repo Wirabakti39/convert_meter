@@ -38,19 +38,21 @@ class Converting:
                     b = False
                 else : b = True
 
-    # setelah di olah, tampilkan hasil nya
+    # fungsi untuk menampilkan hasil
     def user_output(self):
         if b == False : pass
         else :
-            cnv = Converter(self.pnjng_inp, self.satuan_inp, self.satuan_out)
+            cnv = Converter(self.pnjng_inp, self.satuan_inp, self.satuan_out)  # memasukan data user_input ke class Converter kemudian didefinisikan ulang dengan nama cnv
             print("\n\tprocessing...")
-            cnv.olah_data()
+            cnv.olah_data() # data inputan user di olah disini
             sleep(1.2)
+            # menampilkan hasil olahan tadi sesuai kondisi
             if cnv.angka_out == 'invalid':
                 print(f"\ninvalid, {cnv.angka_inp} {cnv.satuan_inp} tidak bisa diubah ke {cnv.satuan_out}\n")
             else :
                 print(f"\n{cnv.angka_inp} {cnv.satuan_inp} = {cnv.angka_out} {cnv.satuan_out}\n")
 
+# run kode dalam looping
 while True :
     converting = Converting()
     converting.user_input()
